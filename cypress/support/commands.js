@@ -29,11 +29,14 @@ Cypress.Commands.add('loginToTrello',()=>{
       // roaghannam3@gmail.com
       // roaghannam123
         cy.visit("/login")
+        cy.wait(3000)
         cy.fixture("trelloUser").then((data)=>{
         cy.findByTestId("username").type(data.email)
         cy.findByTestId("login-submit-idf-testid").click()
+        cy.wait(2000)
         cy.findByTestId("password").type(data.password)
         cy.findByTestId("login-submit-idf-testid").click()
+        cy.wait(6000)
    })
 })
 
