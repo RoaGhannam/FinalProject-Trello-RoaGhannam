@@ -2,15 +2,14 @@
 
 import { Given , When , Then } from "cypress-cucumber-preprocessor/steps";
 import dataUtils from "../../../support/dataUtils.cy";
-import deleteCardActions from "../../../pageObjects/deleteCard/Actions.cy";
-import deleteCardAssertions from "../../../pageObjects/deleteCard/Assertions.cy";
 
-const deleteAction = new deleteCardActions();
-const deleteAssertion = new deleteCardAssertions();
+
+//const moveTemplateAction 
+//const moveTemplateAssertion 
 const dataUtil = new dataUtils();
 
 const boardName = "cy-Boardd"
-const cardName = "cy-card-title"
+const cardName = "cy-New-Template"
 let boardId, boardUrl, listId, cardId, cardUrl
 
 before(() => {
@@ -31,33 +30,34 @@ before(() => {
 })
 
 Given("The user navigates to the board",()=>{
-    deleteAction.openBoard(boardUrl)
-
+    
+    
 })
 
 When("The user opens the card",()=>{
-    deleteAction.openCard(cardUrl)
+    
 })
 
 When("The user clicks on menu icon",()=>{
-    deleteAction.clickOnMenuIcon()
+    
 
 })
 
-When("The user clicks on archive card button",()=>{
-    deleteAction.clickOnArchiveButton()
-
-})
-
-When("The user clicks on delete card button",()=>{
-    deleteAction.clickOnDeleteButton()
+When("The user clicks on make template",()=>{
    
+
 })
-When("The user confirms delete card",()=>{
-   deleteAction.clickOnConfirmDeleteButton()
+When("The user click on move button",()=>{
+   
+
 })
 
-Then("The card should be deleted successfully",()=>{
-    deleteAssertion.checkDeletedCard(cardName)
+When("The user select suggestion list",()=>{
+   
+
+})
+
+Then("The user should moving the card successfully",()=>{
+    
 })
 

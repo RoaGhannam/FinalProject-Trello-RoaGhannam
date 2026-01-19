@@ -1,4 +1,5 @@
-import {APIKey,APIToken} from "../support/constants.cy"
+import { APIKey, APIToken } from "../support/constants.cy";
+
 class dataUtils {
 
     createBoard = (boardName)=>{
@@ -9,6 +10,11 @@ class dataUtils {
         return cy.request("DELETE",`https://api.trello.com/1/boards/${boardId}?key=${APIKey}&token=${APIToken}`)
     }
 
-
+    createCard = (listId, cardName) => {
+    return cy.request("POST",`https://api.trello.com/1/cards?name=${encodeURIComponent(cardName)}&idList=${listId}&key=${APIKey}&token=${APIToken}`)
 }
-export default dataUtils
+getListsByBoard = (boardId) => {
+    return cy.request( "GET",`https://api.trello.com/1/boards/${boardId}/lists?key=${APIKey}&token=${APIToken}`)
+}
+}
+ export default dataUtils

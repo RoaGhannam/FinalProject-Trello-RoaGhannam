@@ -2,15 +2,16 @@
 
 import { Given , When , Then } from "cypress-cucumber-preprocessor/steps";
 import dataUtils from "../../../support/dataUtils.cy";
-import deleteCardActions from "../../../pageObjects/deleteCard/Actions.cy";
-import deleteCardAssertions from "../../../pageObjects/deleteCard/Assertions.cy";
+import hideTemplateActions from "../../../pageObjects/hideTemplate/Actions.cy";
+import hideTemplateAssertions from "../../../pageObjects/hideTemplate/Assertions.cy";
 
-const deleteAction = new deleteCardActions();
-const deleteAssertion = new deleteCardAssertions();
+
+const hideTemplateAction = new hideTemplateActions();
+const hideTemplateAssertion = new hideTemplateAssertions();
 const dataUtil = new dataUtils();
 
 const boardName = "cy-Boardd"
-const cardName = "cy-card-title"
+const cardName = "cy-New-Template"
 let boardId, boardUrl, listId, cardId, cardUrl
 
 before(() => {
@@ -31,33 +32,33 @@ before(() => {
 })
 
 Given("The user navigates to the board",()=>{
-    deleteAction.openBoard(boardUrl)
-
+    hideTemplateAction.openBoard(boardUrl)
+    
 })
 
 When("The user opens the card",()=>{
-    deleteAction.openCard(cardUrl)
+    hideTemplateAction.openCard(cardUrl)
+   
 })
 
 When("The user clicks on menu icon",()=>{
-    deleteAction.clickOnMenuIcon()
+   hideTemplateAction.clickOnMenuIcon()
 
 })
 
-When("The user clicks on archive card button",()=>{
-    deleteAction.clickOnArchiveButton()
+When("The user clicks on make template",()=>{
+    hideTemplateAction.clickOnMakeTemplate()
 
 })
+When("The user clicks on hide button",()=>{
+    hideTemplateAction.clickOnHide()
 
-When("The user clicks on delete card button",()=>{
-    deleteAction.clickOnDeleteButton()
-   
 })
-When("The user confirms delete card",()=>{
-   deleteAction.clickOnConfirmDeleteButton()
-})
+When("The user click on close icon",()=>{
+    hideTemplateAction.clickOnCloseIcon()
 
-Then("The card should be deleted successfully",()=>{
-    deleteAssertion.checkDeletedCard(cardName)
+})
+Then("The card template should be hidden",()=>{
+    hideTemplateAssertion.checkHiddenTemplateCard(cardName)
 })
 
