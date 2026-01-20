@@ -27,15 +27,25 @@ class moveTemplateActions {
 
     }
 
-    clickOnMoveButtton(){
+    clickOnMoveLink(){
         cy.contains('span', 'Move').click()
         return this
 
     }
-    clickOnSuggestionList(){
-    cy.get(".E1T9c99Eq0BY0i").click()       
-     return this
+    clickOnDropDownList(){
+       cy.findByTestId("move-card-popover-select-list-destination-select--input-container").click()
+        return this
 
+    }
+
+    selectAnyList(){
+     cy.contains('Doing').click()    
+     return this
+    }
+    clickOnMoveButtton(){
+    cy.wait(1000)
+     cy.findByTestId("move-card-popover-move-button").click()    
+     return this
     }
   
 

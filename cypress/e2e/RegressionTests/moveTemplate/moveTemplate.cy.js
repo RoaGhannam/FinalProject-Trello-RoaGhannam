@@ -2,10 +2,12 @@
 
 import { Given , When , Then } from "cypress-cucumber-preprocessor/steps";
 import dataUtils from "../../../support/dataUtils.cy";
+import moveTemplateActions from "../../../pageObjects/moveTemplate/Actions.cy";
+import moveTemplateAssertions from "../../../pageObjects/moveTemplate/Assertions.cy";
 
 
-//const moveTemplateAction 
-//const moveTemplateAssertion 
+const moveTemplateAction =new moveTemplateActions();
+const moveTemplateAssertion = new moveTemplateAssertions();
 const dataUtil = new dataUtils();
 
 const boardName = "cy-Boardd"
@@ -30,34 +32,45 @@ before(() => {
 })
 
 Given("The user navigates to the board",()=>{
-    
+     moveTemplateAction.openBoard(boardUrl)
     
 })
 
 When("The user opens the card",()=>{
-    
+    moveTemplateAction.openCard(cardUrl)
 })
 
 When("The user clicks on menu icon",()=>{
-    
+    moveTemplateAction.clickOnMenuIcon()
 
 })
 
 When("The user clicks on make template",()=>{
-   
+   moveTemplateAction.clickOnMakeTemplate()
 
 })
+When("The user click on move link",()=>{
+   moveTemplateAction.clickOnMoveLink()
+
+})
+
+When("The user click on dropdown list",()=>{
+   moveTemplateAction.clickOnDropDownList()
+
+})
+
+When("The user select any list",()=>{
+   moveTemplateAction.selectAnyList()
+
+})
+
 When("The user click on move button",()=>{
-   
+   moveTemplateAction.clickOnMoveButtton()
 
 })
 
-When("The user select suggestion list",()=>{
-   
-
-})
 
 Then("The user should moving the card successfully",()=>{
-    
+    moveTemplateAssertion.checkMovingTemplateCard()
 })
 
