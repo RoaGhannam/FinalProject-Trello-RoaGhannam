@@ -74,3 +74,7 @@ Then("The user should moving the card successfully",()=>{
     moveTemplateAssertion.checkMovingTemplateCard()
 })
 
+
+after(() => {
+    dataUtil.deleteBoard(boardId)
+})

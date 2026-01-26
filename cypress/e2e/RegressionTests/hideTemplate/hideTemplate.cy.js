@@ -62,3 +62,7 @@ Then("The card template should be hidden",()=>{
     hideTemplateAssertion.checkHiddenTemplateCard(cardName)
 })
 
+
+after(() => {
+    dataUtil.deleteBoard(boardId)
+})

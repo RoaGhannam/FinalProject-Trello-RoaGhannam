@@ -69,3 +69,6 @@ Then("The template card name should be update",()=>{
    
 })
 
+after(() => {
+    dataUtil.deleteBoard(boardId)
+})

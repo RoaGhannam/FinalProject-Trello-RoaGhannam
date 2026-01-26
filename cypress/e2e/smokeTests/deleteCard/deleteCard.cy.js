@@ -49,6 +49,7 @@ When("The user clicks on archive card button",()=>{
 
 })
 
+
 When("The user clicks on delete card button",()=>{
     deleteAction.clickOnDeleteButton()
    
@@ -61,3 +62,6 @@ Then("The card should be deleted successfully",()=>{
     deleteAssertion.checkDeletedCard(cardName)
 })
 
+after(() => {
+    dataUtil.deleteBoard(boardId)
+})

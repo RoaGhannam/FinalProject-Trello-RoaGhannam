@@ -54,3 +54,6 @@ Then("The template should be created successfully",()=>{
     cardTemplateAssertion.checkNewTemplateCard()
 })
 
+after(() => {
+    dataUtil.deleteBoard(boardId)
+})
