@@ -1,5 +1,4 @@
-Feature: Create a card template
-
+Feature: Create a card template functionality
 Scenario: Validate that the user can create a new card template
     Given The user navigates to the board
     And The user opens the card
